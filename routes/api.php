@@ -17,7 +17,7 @@ use App\Http\Controllers\CategoryController;
 
 Route::apiResource('categories', CategoryController::class);
 Route::patch('categories/{id}/deactivate', [CategoryController::class, 'deactivate']);
-Route::get('categories/search', [CategoryController::class, 'search']);
+Route::get('categories/search', [CategoryController::class, 'search'])->name('categories.search');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
